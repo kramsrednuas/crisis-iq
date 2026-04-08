@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0d1f3c;
+  --navy-mid:#162d52;
+  --gold:#c9a84c;
+  --gold-light:#e2c278;
+  --cream:#f8f4eb;
+  --border:rgba(201,168,76,0.2);
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);font-size:16px;line-height:1.6;overflow-x:hidden;}
+
+nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:#f8f4eb;}
+.logo span{color:var(--gold);}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{color:rgba(248,244,235,0.82);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:10px 24px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;}
+.nav-cta:hover{background:var(--gold-light);}
+
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 48px;background:var(--navy);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% 65%,rgba(201,168,76,0.1) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,108px);line-height:0.92;letter-spacing:2px;color:#f8f4eb;max-width:900px;margin-bottom:8px;}
+.hero h1 .accent{color:var(--gold);}
+.hero-sub{font-size:clamp(15px,1.8vw,19px);color:rgba(248,244,235,0.85);max-width:560px;margin:28px auto 48px;font-weight:300;line-height:1.75;}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--navy);border:none;padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-ghost{background:transparent;color:rgba(248,244,235,0.9);border:1px solid rgba(201,168,76,0.5);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+.ticker{background:var(--gold);padding:11px 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-flex;gap:64px;animation:ticker 30s linear infinite;}
+.ticker-item{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);display:flex;align-items:center;gap:12px;}
+.ticker-item::before{content:'|';font-size:10px;opacity:0.5;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+.stats{background:var(--navy);display:flex;justify-content:center;padding:56px 48px;flex-wrap:wrap;border-top:1px solid var(--border);}
+.stat{text-align:center;padding:0 56px;border-right:1px solid rgba(201,168,76,0.15);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--gold);line-height:1;margin-bottom:6px;}
+.stat-label{font-size:12px;color:rgba(248,244,235,0.78);max-width:140px;margin:0 auto;}
+
+.section-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:1px;margin-bottom:20px;}
+.dark-title{color:#f8f4eb;}
+.light-title{color:var(--navy);}
+.section-body-dark{font-size:17px;color:rgba(248,244,235,0.88);max-width:560px;font-weight:300;line-height:1.75;}
+.section-body-light{font-size:17px;color:rgba(13,31,60,0.82);max-width:560px;font-weight:300;line-height:1.75;}
+
+.problem-section{padding:100px 0;background:var(--cream);}
+.problem-inner,.features-inner,.compare-inner{max-width:1100px;margin:0 auto;padding:0 48px;}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px;}
+.problem-card{background:#fff;border:1px solid rgba(13,31,60,0.08);border-left:3px solid var(--gold);padding:36px;position:relative;overflow:hidden;transition:box-shadow 0.25s;}
+.problem-card:hover{box-shadow:0 8px 32px rgba(13,31,60,0.08);}
+.problem-num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(201,168,76,0.15);position:absolute;top:12px;right:20px;line-height:1;}
+.problem-card h3{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;}
+.problem-card p{font-size:14px;color:rgba(13,31,60,0.82);line-height:1.75;}
+
+.features-section{padding:100px 0;background:var(--navy-mid);}
+.features-tabs{display:flex;gap:2px;margin-top:56px;border-bottom:1px solid rgba(201,168,76,0.15);}
+.tab-btn{background:transparent;border:none;border-bottom:2px solid transparent;padding:14px 22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;color:rgba(248,244,235,0.35);cursor:pointer;transition:all 0.2s;margin-bottom:-1px;}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tab-btn:hover:not(.active){color:rgba(248,244,235,0.65);}
+.tab-content{display:none;padding:48px 0;}
+.tab-content.active{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.feature-desc h3{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:1px;color:#f8f4eb;margin-bottom:16px;}
+.feature-desc p{font-size:15px;color:rgba(248,244,235,0.88);line-height:1.8;margin-bottom:20px;}
+.feature-tag{display:inline-block;background:rgba(201,168,76,0.12);color:var(--gold);border:1px solid rgba(201,168,76,0.25);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;margin:4px 4px 4px 0;}
+.feature-mock{background:rgba(13,31,60,0.5);border:1px solid rgba(201,168,76,0.15);padding:28px;}
+.mock-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(201,168,76,0.1);}
+.mock-dot{width:8px;height:8px;border-radius:50%;}
+.mock-title{font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:rgba(248,244,235,0.72);}
+.mock-badge{margin-left:auto;font-size:10px;background:rgba(201,168,76,0.15);color:var(--gold);padding:3px 8px;border:1px solid rgba(201,168,76,0.25);letter-spacing:0.5px;text-transform:uppercase;font-weight:500;}
+.mock-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(201,168,76,0.05);}
+.mock-row:last-child{border-bottom:none;}
+.mock-label{font-size:13px;color:rgba(248,244,235,0.82);}
+.mock-value{font-size:13px;color:#f8f4eb;font-weight:500;}
+.status{font-size:10px;padding:3px 9px;letter-spacing:0.5px;text-transform:uppercase;font-weight:500;}
+.status-green{background:rgba(82,190,128,0.12);color:#5dbe80;border:1px solid rgba(82,190,128,0.2);}
+.status-amber{background:rgba(230,180,60,0.12);color:#d4a833;border:1px solid rgba(230,180,60,0.2);}
+.status-red{background:rgba(192,57,43,0.15);color:#e07060;border:1px solid rgba(192,57,43,0.25);}
+.mock-bar-row{display:flex;gap:8px;align-items:center;margin:8px 0;}
+.mock-bar-label{font-size:12px;color:rgba(248,244,235,0.75);width:100px;}
+.mock-bar{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;}
+.mock-bar-fill{height:100%;border-radius:2px;}
+.mock-bar-pct{font-size:12px;color:rgba(248,244,235,0.75);width:36px;text-align:right;}
+
+.compare-section{padding:100px 0;background:var(--cream);}
+.compare-table{width:100%;border-collapse:collapse;margin-top:48px;}
+.compare-table th{padding:16px 20px;text-align:left;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(13,31,60,0.9);border-bottom:1px solid rgba(13,31,60,0.1);}
+.compare-table th.hl{color:var(--navy);background:rgba(201,168,76,0.08);border-left:1px solid rgba(201,168,76,0.2);border-right:1px solid rgba(201,168,76,0.2);}
+.compare-table td{padding:14px 20px;font-size:13px;color:var(--navy);border-bottom:1px solid rgba(13,31,60,0.07);}
+.compare-table td.hl{background:rgba(201,168,76,0.06);color:var(--navy);border-left:1px solid rgba(201,168,76,0.15);border-right:1px solid rgba(201,168,76,0.15);font-weight:500;}
+.compare-table tr:last-child td.hl{border-bottom:1px solid rgba(201,168,76,0.2);}
+.check{color:#2e8b57;font-size:15px;font-weight:500;}
+.cross{color:rgba(13,31,60,0.45);font-size:15px;}
+.partial{color:#9a6e10;font-size:13px;font-weight:500;}
+
+.cta-section{padding:120px 48px;text-align:center;background:var(--navy);border-top:1px solid var(--border);position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 100%,rgba(201,168,76,0.08) 0%,transparent 65%);pointer-events:none;}
+.cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:1px;color:#f8f4eb;margin-bottom:20px;}
+.cta-section p{font-size:17px;color:rgba(248,244,235,0.85);margin-bottom:40px;font-weight:300;max-width:560px;margin-left:auto;margin-right:auto;}
+.cta-form{display:flex;gap:0;justify-content:center;max-width:480px;margin:0 auto;}
+.cta-input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);border-right:none;padding:16px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:#f8f4eb;outline:none;}
+.cta-input::placeholder{color:rgba(248,244,235,0.25);}
+.cta-input:focus{border-color:rgba(201,168,76,0.5);}
+
+footer{background:var(--navy);border-top:1px solid var(--border);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#f8f4eb;}
+.footer-logo span{color:var(--gold);}
+footer p{font-size:12px;color:rgba(248,244,235,0.65);}
+
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .hero{padding:60px 24px;}
+  .stats{padding:32px 20px;}
+  .stat{padding:16px 24px;border-right:none;border-bottom:1px solid rgba(201,168,76,0.1);}
+  .problem-grid{grid-template-columns:1fr;}
+  .tab-content.active{grid-template-columns:1fr;}
+  .problem-inner,.features-inner,.compare-inner{padding:0 24px;}
+  .compare-table th,.compare-table td{padding:10px 10px;font-size:11px;}
+  footer{flex-direction:column;gap:12px;text-align:center;}
+  .cta-section{padding:80px 24px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div style="display:flex;align-items:center;gap:10px;">
+  <svg viewBox="0 0 200 220" width="32" height="35" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="100,198 84,162 100,172" fill="#c9a84c" opacity="0.45"/>
+    <polygon points="100,198 116,162 100,172" fill="#c9a84c" opacity="0.45"/>
+    <polygon points="100,198 66,152 88,165" fill="#c9a84c" opacity="0.28"/>
+    <polygon points="100,198 134,152 112,165" fill="#c9a84c" opacity="0.28"/>
+    <polygon points="100,170 80,122 120,122" fill="#c9a84c"/>
+    <polygon points="82,138 28,102 62,130" fill="#c9a84c" opacity="0.85"/>
+    <polygon points="74,126 14,82 52,116" fill="#c9a84c" opacity="0.6"/>
+    <polygon points="68,114 10,62 46,102" fill="#c9a84c" opacity="0.35"/>
+    <polygon points="118,138 172,102 138,130" fill="#c9a84c" opacity="0.85"/>
+    <polygon points="126,126 186,82 148,116" fill="#c9a84c" opacity="0.6"/>
+    <polygon points="132,114 190,62 154,102" fill="#c9a84c" opacity="0.35"/>
+    <polygon points="100,122 88,92 112,92" fill="#e2c278"/>
+    <polygon points="100,92 84,62 116,62" fill="#e2c278"/>
+    <polygon points="88,66 80,38 96,60" fill="#c9a84c"/>
+    <polygon points="100,62 96,32 104,58" fill="#e2c278"/>
+    <polygon points="112,66 120,38 104,60" fill="#c9a84c"/>
+  </svg>
+  <div class="logo">CRISIS<span>IQ</span></div>
+</div>
+  <div class="nav-links">
+    <a href="#problem">The Problem</a>
+    <a href="#platform">Platform</a>
+    <a href="#compare">Compare</a>
+    <a href="#demo">Request Demo</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Request Demo</button>
+</nav>
+
+<section class="hero">
+  <svg viewBox="0 0 200 220" width="72" height="80" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px;">
+    <polygon points="100,198 84,162 100,172" fill="#c9a84c" opacity="0.45"/>
+    <polygon points="100,198 116,162 100,172" fill="#c9a84c" opacity="0.45"/>
+    <polygon points="100,198 66,152 88,165" fill="#c9a84c" opacity="0.28"/>
+    <polygon points="100,198 134,152 112,165" fill="#c9a84c" opacity="0.28"/>
+    <polygon points="100,170 80,122 120,122" fill="#c9a84c"/>
+    <polygon points="82,138 28,102 62,130" fill="#c9a84c" opacity="0.85"/>
+    <polygon points="74,126 14,82 52,116" fill="#c9a84c" opacity="0.6"/>
+    <polygon points="68,114 10,62 46,102" fill="#c9a84c" opacity="0.35"/>
+    <polygon points="118,138 172,102 138,130" fill="#c9a84c" opacity="0.85"/>
+    <polygon points="126,126 186,82 148,116" fill="#c9a84c" opacity="0.6"/>
+    <polygon points="132,114 190,62 154,102" fill="#c9a84c" opacity="0.35"/>
+    <polygon points="100,122 88,92 112,92" fill="#e2c278"/>
+    <polygon points="100,92 84,62 116,62" fill="#e2c278"/>
+    <polygon points="88,66 80,38 96,60" fill="#c9a84c"/>
+    <polygon points="100,62 96,32 104,58" fill="#e2c278"/>
+    <polygon points="112,66 120,38 104,60" fill="#c9a84c"/>
+  </svg>
+<div class="hero-eyebrow">Crisis Communications Infrastructure</div>
+  <h1>One Voice.<br>Every <span class="accent">Level.</span><br>Always.</h1>
+  <p class="hero-sub">When a crisis breaks, the gap between what leadership knows and what your client-facing teams say can cost you everything. Crisis IQ closes that gap — in minutes, not hours.</p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Request a Demo</button>
+    <button class="btn-ghost" onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">See the Platform</button>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">91% of financial firms experienced a major disruption in the last two years</span>
+    <span class="ticker-item">The average crisis response gap: 4+ hours before field teams receive approved guidance</span>
+    <span class="ticker-item">Inconsistent messaging is the #1 driver of client redemption requests during a crisis</span>
+    <span class="ticker-item">SEC examiners now ask: what did your employees tell clients, and when?</span>
+    <span class="ticker-item">Your competitors are already thinking about this</span>
+    <span class="ticker-item">91% of financial firms experienced a major disruption in the last two years</span>
+    <span class="ticker-item">The average crisis response gap: 4+ hours before field teams receive approved guidance</span>
+    <span class="ticker-item">Inconsistent messaging is the #1 driver of client redemption requests during a crisis</span>
+    <span class="ticker-item">SEC examiners now ask: what did your employees tell clients, and when?</span>
+    <span class="ticker-item">Your competitors are already thinking about this</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">91%</div>
+    <div class="stat-label">of firms experienced a major disruption in the last 2 years</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4hrs+</div>
+    <div class="stat-label">average delay before field teams receive approved crisis guidance</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">$3.5T</div>
+    <div class="stat-label">in AUM now exposed to reputational and regulatory crisis risk</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">0</div>
+    <div class="stat-label">purpose-built platforms for financial services crisis comms — until now</div>
+  </div>
+</div>
+
+<div class="problem-section" id="problem">
+  <div class="problem-inner">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title light-title">Your Firm Is Not Ready</h2>
+    <p class="section-body-light">When a crisis hits — an SEC investigation, a market disruption, a key executive departure, a regulatory action — your client-facing teams are the last to know and the first to get the call.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-num">01</div>
+        <h3>No Approved Guidance</h3>
+        <p>Relationship managers and advisors improvise under pressure. Legal sends a press statement written for external media — not a script for the client asking "Is my money safe?" right now.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">02</div>
+        <h3>Inconsistent Messaging</h3>
+        <p>A junior associate says something different than a branch manager, who says something different than a senior advisor. Every variation is a liability — regulatory, legal, and reputational.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">03</div>
+        <h3>No Audit Trail</h3>
+        <p>When regulators ask what your employees communicated to clients — and when — you have emails, Slack threads, and call logs. Not the documented compliance record they expect to see.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">04</div>
+        <h3>Tools Built for Other Problems</h3>
+        <p>Everbridge handles active shooters. Poppulo manages internal newsletters. Teams facilitates conversation. None were built for the regulatory and reputational crises financial institutions actually face.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="features-section" id="platform">
+  <div class="features-inner">
+    <div class="section-label">The Platform</div>
+    <h2 class="section-title dark-title">Control the Narrative</h2>
+    <p class="section-body-dark">Five integrated capabilities that take your firm from crisis chaos to controlled response — in minutes.</p>
+    <div class="features-tabs">
+      <button class="tab-btn active" onclick="showTab('signal',this)">Signal Radar</button>
+      <button class="tab-btn" onclick="showTab('card',this)">Crisis Card</button>
+      <button class="tab-btn" onclick="showTab('approval',this)">Approvals</button>
+      <button class="tab-btn" onclick="showTab('disseminate',this)">Dissemination</button>
+      <button class="tab-btn" onclick="showTab('qa',this)">Field Q&A</button>
+    </div>
+
+    <div class="tab-content active" id="tab-signal">
+      <div class="feature-desc">
+        <h3>Signal Aggregation & Radar</h3>
+        <p>Crisis IQ continuously monitors regulatory feeds, news sources, internal systems, and manual triggers — so your team knows a crisis is developing before your clients do.</p>
+        <p>When a signal crosses a severity threshold, the platform automatically activates and classifies the event using a financial-services-specific taxonomy.</p>
+        <div><span class="feature-tag">SEC / FINRA Feeds</span><span class="feature-tag">News Monitoring</span><span class="feature-tag">Internal Triggers</span><span class="feature-tag">Auto-Classification</span></div>
+      </div>
+      <div class="feature-mock">
+        <div class="mock-header">
+          <div class="mock-dot" style="background:#e07060;"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <span class="mock-title">Crisis Radar — Live</span>
+          <span class="mock-badge">3 Active Signals</span>
+        </div>
+        <div class="mock-row"><span class="mock-label">SEC EDGAR Alert</span><span class="status status-red">High Severity</span></div>
+        <div class="mock-row"><span class="mock-label">Reuters — Regulatory Filing</span><span class="status status-amber">Monitoring</span></div>
+        <div class="mock-row"><span class="mock-label">Internal Compliance Flag</span><span class="status status-amber">Monitoring</span></div>
+        <div class="mock-row"><span class="mock-label">WSJ Breaking News</span><span class="status status-green">Resolved</span></div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(201,168,76,0.2);">
+          <div style="font-size:11px;color:rgba(248,244,235,0.7);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Signal Cluster Analysis</div>
+          <div class="mock-bar-row"><span class="mock-bar-label">Regulatory</span><div class="mock-bar"><div class="mock-bar-fill" style="width:78%;background:var(--gold);"></div></div><span class="mock-bar-pct">78%</span></div>
+          <div class="mock-bar-row"><span class="mock-bar-label">Reputational</span><div class="mock-bar"><div class="mock-bar-fill" style="width:54%;background:rgba(201,168,76,0.5);"></div></div><span class="mock-bar-pct">54%</span></div>
+          <div class="mock-bar-row"><span class="mock-bar-label">Operational</span><div class="mock-bar"><div class="mock-bar-fill" style="width:21%;background:rgba(201,168,76,0.25);"></div></div><span class="mock-bar-pct">21%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-card">
+      <div class="feature-desc">
+        <h3>Crisis Card Builder</h3>
+        <p>The moment a crisis is classified, Crisis IQ auto-generates a structured Crisis Card — the single source of truth for your entire organization.</p>
+        <p>From one card, the platform creates tiered messaging for every role: the advisor gets a client FAQ, the portfolio manager gets technical depth, the C-Suite gets the full strategic narrative.</p>
+        <div><span class="feature-tag">AI-Assisted Drafting</span><span class="feature-tag">Role-Based Tiers</span><span class="feature-tag">Prohibited Language Flags</span><span class="feature-tag">Version Control</span></div>
+      </div>
+      <div class="feature-mock">
+        <div class="mock-header">
+          <div class="mock-dot" style="background:#e07060;"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <span class="mock-title">Crisis Card — Draft v1</span>
+          <span class="mock-badge">Pending Approval</span>
+        </div>
+        <div class="mock-row"><span class="mock-label">Crisis Type</span><span class="mock-value">Regulatory Inquiry</span></div>
+        <div class="mock-row"><span class="mock-label">Severity</span><span class="status status-red">High</span></div>
+        <div class="mock-row"><span class="mock-label">Confirmed Facts</span><span class="mock-value">Inquiry received</span></div>
+        <div class="mock-row"><span class="mock-label">Unconfirmed</span><span class="mock-value">Scope, timeline</span></div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+          <div style="font-size:11px;color:rgba(248,244,235,0.7);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Role Messaging Status</div>
+          <div class="mock-row"><span class="mock-label">Client-Facing Advisors</span><span class="status status-amber">Drafting</span></div>
+          <div class="mock-row"><span class="mock-label">Portfolio / Product Teams</span><span class="status status-amber">Drafting</span></div>
+          <div class="mock-row"><span class="mock-label">C-Suite / Board</span><span class="status status-green">Ready</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-approval">
+      <div class="feature-desc">
+        <h3>Governed Approval Workflow</h3>
+        <p>No message goes live without passing through a structured, time-stamped approval chain — Legal, Compliance, and Risk — with auto-locking of prior versions.</p>
+        <p>A provisional approval mode handles time-critical situations, so you are never choosing between speed and governance.</p>
+        <div><span class="feature-tag">One-Click Approvals</span><span class="feature-tag">Auto-Lock Versions</span><span class="feature-tag">Provisional Mode</span><span class="feature-tag">Full Audit Log</span></div>
+      </div>
+      <div class="feature-mock">
+        <div class="mock-header">
+          <div class="mock-dot" style="background:#e07060;"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <span class="mock-title">Approval Chain</span>
+          <span class="mock-badge">1 of 3 Complete</span>
+        </div>
+        <div class="mock-row"><span class="mock-label">General Counsel</span><span class="status status-green">Approved 09:14 AM</span></div>
+        <div class="mock-row"><span class="mock-label">Chief Compliance Officer</span><span class="status status-amber">In Review</span></div>
+        <div class="mock-row"><span class="mock-label">Chief Risk Officer</span><span class="status status-red">Pending</span></div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="mock-row"><span class="mock-label">Active Version</span><span class="mock-value">v3 — Current</span></div>
+          <div class="mock-row"><span class="mock-label">Prior Versions</span><span class="mock-value">v1, v2 — Locked</span></div>
+          <div class="mock-row"><span class="mock-label">Est. Completion</span><span class="mock-value">~12 minutes</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-disseminate">
+      <div class="feature-desc">
+        <h3>Multi-Channel Dissemination</h3>
+        <p>Once approved, Crisis IQ broadcasts instantly across every channel your firm uses — Teams, email, SMS, CRM banners, mobile push — with required acknowledgment tracking.</p>
+        <p>Every receipt is timestamped. Every acknowledgment is logged. When regulators ask what your employees knew and when, you have the answer.</p>
+        <div><span class="feature-tag">Teams / Slack</span><span class="feature-tag">Email + SMS</span><span class="feature-tag">CRM Integration</span><span class="feature-tag">Acknowledgment Tracking</span></div>
+      </div>
+      <div class="feature-mock">
+        <div class="mock-header">
+          <div class="mock-dot" style="background:#5dbe80;"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <span class="mock-title">Broadcast Status</span>
+          <span class="mock-badge" style="background:rgba(82,190,128,0.12);color:#5dbe80;border-color:rgba(82,190,128,0.2);">Live</span>
+        </div>
+        <div class="mock-row"><span class="mock-label">Microsoft Teams</span><span class="status status-green">Sent 09:31 AM</span></div>
+        <div class="mock-row"><span class="mock-label">Email — All Advisors</span><span class="status status-green">Sent 09:31 AM</span></div>
+        <div class="mock-row"><span class="mock-label">SMS — Priority Group</span><span class="status status-green">Sent 09:32 AM</span></div>
+        <div class="mock-row"><span class="mock-label">CRM Banner (Salesforce)</span><span class="status status-green">Active</span></div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+          <div style="font-size:11px;color:rgba(248,244,235,0.7);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Acknowledgment Rate</div>
+          <div class="mock-bar-row"><span class="mock-bar-label">Acknowledged</span><div class="mock-bar"><div class="mock-bar-fill" style="width:73%;background:#5dbe80;"></div></div><span class="mock-bar-pct">73%</span></div>
+          <div class="mock-bar-row"><span class="mock-bar-label">Pending</span><div class="mock-bar"><div class="mock-bar-fill" style="width:27%;background:#d4a833;"></div></div><span class="mock-bar-pct">27%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-qa">
+      <div class="feature-desc">
+        <h3>Field-Level Q&A Loop</h3>
+        <p>The feature missing from every existing solution. Client-facing staff submit real-time questions directly from Teams, mobile, or their CRM sidebar — and get approved answers back fast.</p>
+        <p>New questions escalate to the crisis team and feed back into a growing knowledge base, so the platform gets smarter with every event.</p>
+        <div><span class="feature-tag">Real-Time Submission</span><span class="feature-tag">AI Answer Matching</span><span class="feature-tag">Escalation Engine</span><span class="feature-tag">Knowledge Base</span></div>
+      </div>
+      <div class="feature-mock">
+        <div class="mock-header">
+          <div class="mock-dot" style="background:#e07060;"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <div class="mock-dot" style="background:rgba(255,255,255,0.1);"></div>
+          <span class="mock-title">Field Q&A — Active</span>
+          <span class="mock-badge">14 Questions</span>
+        </div>
+        <div class="mock-row"><span class="mock-label">"Is my account protected?"</span><span class="status status-green">Answered</span></div>
+        <div class="mock-row"><span class="mock-label">"When will we have more info?"</span><span class="status status-green">Answered</span></div>
+        <div class="mock-row"><span class="mock-label">"Should I expect any delays?"</span><span class="status status-amber">Escalated</span></div>
+        <div class="mock-row"><span class="mock-label">"Is this investigation public?"</span><span class="status status-red">New — Urgent</span></div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="mock-row"><span class="mock-label">Avg. Response Time</span><span class="mock-value">4 min 12 sec</span></div>
+          <div class="mock-row"><span class="mock-label">Knowledge Base Entries</span><span class="mock-value">+8 this event</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="padding:100px 0;background:var(--navy);">
+  <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+    <div class="section-label">Ecosystem</div>
+    <h2 class="section-title dark-title">One Hub. Every Channel.</h2>
+    <p class="section-body-dark" style="margin-bottom:64px;">Crisis IQ sits at the center of your communications infrastructure — ingesting signals from every direction and pushing approved, role-based messaging across every channel your organization uses.</p>
+
+    <div style="display:flex;justify-content:center;">
+      <svg viewBox="0 0 780 680" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:780px;">
+        <defs>
+          <marker id="arrow-out" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#c9a84c" opacity="0.7"/>
+          </marker>
+          <marker id="arrow-in" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+            <path d="M8,0 L8,6 L0,3 z" fill="#6a8fb5" opacity="0.7"/>
+          </marker>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Subtle grid rings -->
+        <circle cx="390" cy="340" r="120" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="1"/>
+        <circle cx="390" cy="340" r="210" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+        <circle cx="390" cy="340" r="295" fill="none" stroke="rgba(201,168,76,0.03)" stroke-width="1"/>
+
+        <!-- INBOUND spokes (blue) — left side signals coming IN -->
+        <!-- SEC / FINRA — top left -->
+        <line x1="390" y1="340" x2="148" y2="118" stroke="#6a8fb5" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-in)" opacity="0.6"/>
+        <!-- News & Media — left -->
+        <line x1="390" y1="340" x2="88" y2="310" stroke="#6a8fb5" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-in)" opacity="0.6"/>
+        <!-- Internal HR / Compliance — bottom left -->
+        <line x1="390" y1="340" x2="148" y2="542" stroke="#6a8fb5" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-in)" opacity="0.6"/>
+
+        <!-- OUTBOUND spokes (gold) — right side channels going OUT -->
+        <!-- Email — top right -->
+        <line x1="390" y1="340" x2="600" y2="118" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <!-- Slack — right -->
+        <line x1="390" y1="340" x2="672" y2="240" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <!-- CRM Salesforce — far right -->
+        <line x1="390" y1="340" x2="692" y2="340" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <!-- SMS Mobile — right lower -->
+        <line x1="390" y1="340" x2="672" y2="440" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <!-- Client Portal — bottom right -->
+        <line x1="390" y1="340" x2="600" y2="542" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <!-- Board / C-Suite — top center -->
+        <line x1="390" y1="340" x2="390" y2="62" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+
+        <!-- HUB — Crisis IQ center -->
+        <circle cx="390" cy="340" r="72" fill="#0d1f3c" stroke="#c9a84c" stroke-width="2"/>
+        <circle cx="390" cy="340" r="66" fill="#162d52" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+        <text x="390" y="330" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#f8f4eb" letter-spacing="2">CRISIS</text>
+        <text x="390" y="354" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#c9a84c" letter-spacing="2">IQ</text>
+        <text x="390" y="372" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,244,235,0.5)" letter-spacing="1.5">PLATFORM</text>
+
+        <!-- INBOUND NODES — left side -->
+        <!-- SEC / FINRA -->
+        <rect x="60" y="82" width="136" height="52" rx="3" fill="#0d1f3c" stroke="#6a8fb5" stroke-width="1.2" opacity="0.9"/>
+        <text x="128" y="104" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#a8c4e0" letter-spacing="0.3">SEC / FINRA</text>
+        <text x="128" y="121" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.6)">Regulatory Feeds</text>
+
+        <!-- News & Media -->
+        <rect x="18" y="284" width="136" height="52" rx="3" fill="#0d1f3c" stroke="#6a8fb5" stroke-width="1.2" opacity="0.9"/>
+        <text x="86" y="306" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#a8c4e0" letter-spacing="0.3">NEWS &amp; MEDIA</text>
+        <text x="86" y="323" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.6)">Monitoring</text>
+
+        <!-- Internal HR / Compliance -->
+        <rect x="60" y="516" width="136" height="52" rx="3" fill="#0d1f3c" stroke="#6a8fb5" stroke-width="1.2" opacity="0.9"/>
+        <text x="128" y="538" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#a8c4e0" letter-spacing="0.3">INTERNAL HR</text>
+        <text x="128" y="555" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.6)">Compliance Systems</text>
+
+        <!-- OUTBOUND NODES — right side -->
+        <!-- Board / C-Suite — top center -->
+        <rect x="316" y="18" width="148" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="390" y="40" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">BOARD / C-SUITE</text>
+        <text x="390" y="57" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Executive Briefings</text>
+
+        <!-- Email — top right -->
+        <rect x="584" y="82" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="644" y="104" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">EMAIL</text>
+        <text x="644" y="121" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">All Staff Broadcast</text>
+
+        <!-- Slack -->
+        <rect x="638" y="214" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="698" y="236" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">SLACK</text>
+        <text x="698" y="253" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Channel Alerts</text>
+
+        <!-- CRM Salesforce -->
+        <rect x="648" y="314" width="124" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="710" y="336" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">CRM</text>
+        <text x="710" y="353" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Salesforce Banners</text>
+
+        <!-- SMS Mobile -->
+        <rect x="638" y="414" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="698" y="436" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">SMS / MOBILE</text>
+        <text x="698" y="453" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Push Notifications</text>
+
+        <!-- Client Portal -->
+        <rect x="584" y="516" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="644" y="538" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">CLIENT PORTAL</text>
+        <text x="644" y="555" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Secure Updates</text>
+
+        <!-- Legend -->
+        <line x1="200" y1="625" x2="240" y2="625" stroke="#6a8fb5" stroke-width="1.5" stroke-dasharray="5,4"/>
+        <text x="248" y="629" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(248,244,235,0.65)">Inbound Signals</text>
+        <line x1="360" y1="625" x2="400" y2="625" stroke="#c9a84c" stroke-width="1.5"/>
+        <circle cx="400" cy="625" r="3" fill="#c9a84c"/>
+        <text x="410" y="629" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(248,244,235,0.65)">Outbound Communications</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="compare-section" id="compare">
+  <div class="compare-inner">
+    <div class="section-label">The Landscape</div>
+    <h2 class="section-title light-title">Nothing Else Does This</h2>
+    <p class="section-body-light">Good tools, built for different problems. Crisis IQ is purpose-built for the crises financial institutions actually face.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Everbridge</th>
+          <th>Poppulo / Firstup</th>
+          <th>Microsoft Teams</th>
+          <th class="hl">Crisis IQ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Regulatory / reputational crisis focus</td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td class="hl"><span class="check">&#x2713;</span></td></tr>
+        <tr><td>Role-based messaging hierarchy</td><td><span class="cross">&#x2717;</span></td><td><span class="partial">Partial</span></td><td><span class="cross">&#x2717;</span></td><td class="hl"><span class="check">&#x2713;</span></td></tr>
+        <tr><td>AI-assisted crisis card generation</td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td class="hl"><span class="check">&#x2713;</span></td></tr>
+        <tr><td>Governed approval workflow</td><td><span class="partial">Partial</span></td><td><span class="partial">Partial</span></td><td><span class="cross">&#x2717;</span></td><td class="hl"><span class="check">&#x2713;</span></td></tr>
+        <tr><td>Regulatory compliance audit trail</td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td class="hl"><span class="check">&#x2713;</span></td></tr>
+        <tr><td>Field-level Q&A feedback loop</td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td><span class="cross">&#x2717;</span></td><td class="hl"><span class="check">&#x2713;</span></td></tr>
+        <tr><td>Multi-channel broadcast + acknowledgment</td><td><span class="check">&#x2713;</span></td><td><span class="check">&#x2713;</span></td><td><span class="partial">Partial</span></td><td class="hl"><span class="check">&#x2713;</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="cta-section" id="demo">
+  <h2>The Next Crisis<br>Is a Matter of When.</h2>
+  <p>The firms that invest in this infrastructure before it happens will be the ones whose client relationships, regulatory standing, and reputations survive intact.</p>
+  <div class="cta-form">
+    <input class="cta-input" type="email" placeholder="Your work email" />
+    <button class="btn-primary">Request Demo</button>
+  </div>
+</div>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:8px;">
+  <svg viewBox="0 0 200 220" width="24" height="27" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="100,198 84,162 100,172" fill="#c9a84c" opacity="0.45"/>
+    <polygon points="100,198 116,162 100,172" fill="#c9a84c" opacity="0.45"/>
+    <polygon points="100,198 66,152 88,165" fill="#c9a84c" opacity="0.28"/>
+    <polygon points="100,198 134,152 112,165" fill="#c9a84c" opacity="0.28"/>
+    <polygon points="100,170 80,122 120,122" fill="#c9a84c"/>
+    <polygon points="82,138 28,102 62,130" fill="#c9a84c" opacity="0.85"/>
+    <polygon points="74,126 14,82 52,116" fill="#c9a84c" opacity="0.6"/>
+    <polygon points="68,114 10,62 46,102" fill="#c9a84c" opacity="0.35"/>
+    <polygon points="118,138 172,102 138,130" fill="#c9a84c" opacity="0.85"/>
+    <polygon points="126,126 186,82 148,116" fill="#c9a84c" opacity="0.6"/>
+    <polygon points="132,114 190,62 154,102" fill="#c9a84c" opacity="0.35"/>
+    <polygon points="100,122 88,92 112,92" fill="#e2c278"/>
+    <polygon points="100,92 84,62 116,62" fill="#e2c278"/>
+    <polygon points="88,66 80,38 96,60" fill="#c9a84c"/>
+    <polygon points="100,62 96,32 104,58" fill="#e2c278"/>
+    <polygon points="112,66 120,38 104,60" fill="#c9a84c"/>
+  </svg>
+  <div class="footer-logo">CRISIS<span>IQ</span></div>
+</div>
+  <p>&#169; 2025 Crisis IQ. Purpose-built for financial services.</p>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
