@@ -23,32 +23,32 @@ nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px s
 .nav-links{display:flex;gap:32px;}
 .nav-links a{color:rgba(248,244,235,0.82);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover{color:var(--gold);}
-.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:10px 24px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;}
+.nav-cta{background:var(--gold);color:#fff;border:none;padding:10px 24px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;}
 .nav-cta:hover{background:var(--gold-light);}
 
 .hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 48px;background:var(--navy);position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% 65%,rgba(201,168,76,0.1) 0%,transparent 70%);pointer-events:none;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% 65%,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none;}
 .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gold);}
 .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,108px);line-height:0.92;letter-spacing:2px;color:#f8f4eb;max-width:900px;margin-bottom:8px;}
 .hero h1 .accent{color:var(--gold);}
 .hero-sub{font-size:clamp(15px,1.8vw,19px);color:rgba(248,244,235,0.85);max-width:560px;margin:28px auto 48px;font-weight:300;line-height:1.75;}
 .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-.btn-primary{background:var(--gold);color:var(--navy);border:none;padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.btn-primary{background:var(--gold);color:#fff;border:none;padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
 .btn-primary:hover{background:var(--gold-light);}
-.btn-ghost{background:transparent;color:rgba(248,244,235,0.9);border:1px solid rgba(201,168,76,0.5);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.btn-ghost{background:transparent;color:rgba(248,244,235,0.9);border:1px solid rgba(37,99,235,0.5);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
 
 .ticker{background:var(--gold);padding:11px 0;overflow:hidden;white-space:nowrap;}
 .ticker-inner{display:inline-flex;gap:64px;animation:ticker 30s linear infinite;}
-.ticker-item{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);display:flex;align-items:center;gap:12px;}
+.ticker-item{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:12px;}
 .ticker-item::before{content:'|';font-size:10px;opacity:0.5;}
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 .stats{background:var(--navy);display:flex;justify-content:center;padding:56px 48px;flex-wrap:wrap;border-top:1px solid var(--border);}
-.stat{text-align:center;padding:0 56px;border-right:1px solid rgba(201,168,76,0.15);}
+.stat{text-align:center;padding:0 56px;border-right:1px solid rgba(37,99,235,0.15);}
 .stat:last-child{border-right:none;}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--gold);line-height:1;margin-bottom:6px;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:#fff;line-height:1;margin-bottom:6px;}
 .stat-label{font-size:12px;color:rgba(248,244,235,0.78);max-width:140px;margin:0 auto;}
 
 .section-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
@@ -63,12 +63,12 @@ nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px s
 .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px;}
 .problem-card{background:#fff;border:1px solid rgba(13,31,60,0.08);border-left:3px solid var(--gold);padding:36px;position:relative;overflow:hidden;transition:box-shadow 0.25s;}
 .problem-card:hover{box-shadow:0 8px 32px rgba(13,31,60,0.08);}
-.problem-num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(201,168,76,0.15);position:absolute;top:12px;right:20px;line-height:1;}
+.problem-num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:rgba(37,99,235,0.15);position:absolute;top:12px;right:20px;line-height:1;}
 .problem-card h3{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;}
 .problem-card p{font-size:14px;color:rgba(13,31,60,0.82);line-height:1.75;}
 
 .features-section{padding:100px 0;background:var(--navy-mid);}
-.features-tabs{display:flex;gap:2px;margin-top:56px;border-bottom:1px solid rgba(201,168,76,0.15);}
+.features-tabs{display:flex;gap:2px;margin-top:56px;border-bottom:1px solid rgba(37,99,235,0.15);}
 .tab-btn{background:transparent;border:none;border-bottom:2px solid transparent;padding:14px 22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;color:rgba(248,244,235,0.35);cursor:pointer;transition:all 0.2s;margin-bottom:-1px;}
 .tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
 .tab-btn:hover:not(.active){color:rgba(248,244,235,0.65);}
@@ -76,13 +76,13 @@ nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px s
 .tab-content.active{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
 .feature-desc h3{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:1px;color:#f8f4eb;margin-bottom:16px;}
 .feature-desc p{font-size:15px;color:rgba(248,244,235,0.88);line-height:1.8;margin-bottom:20px;}
-.feature-tag{display:inline-block;background:rgba(201,168,76,0.12);color:var(--gold);border:1px solid rgba(201,168,76,0.25);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;margin:4px 4px 4px 0;}
-.feature-mock{background:rgba(13,31,60,0.5);border:1px solid rgba(201,168,76,0.15);padding:28px;}
-.mock-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(201,168,76,0.1);}
+.feature-tag{display:inline-block;background:var(--gold);color:#fff;border:1px solid var(--gold);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;margin:4px 4px 4px 0;}
+.feature-mock{background:rgba(13,31,60,0.5);border:1px solid rgba(37,99,235,0.15);padding:28px;}
+.mock-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(37,99,235,0.1);}
 .mock-dot{width:8px;height:8px;border-radius:50%;}
 .mock-title{font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:rgba(248,244,235,0.72);}
-.mock-badge{margin-left:auto;font-size:10px;background:rgba(201,168,76,0.15);color:var(--gold);padding:3px 8px;border:1px solid rgba(201,168,76,0.25);letter-spacing:0.5px;text-transform:uppercase;font-weight:500;}
-.mock-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(201,168,76,0.05);}
+.mock-badge{margin-left:auto;font-size:10px;background:#f59e0b;color:#fff;padding:3px 8px;border:1px solid #f59e0b;letter-spacing:0.5px;text-transform:uppercase;font-weight:500;}
+.mock-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(37,99,235,0.05);}
 .mock-row:last-child{border-bottom:none;}
 .mock-label{font-size:13px;color:rgba(248,244,235,0.82);}
 .mock-value{font-size:13px;color:#f8f4eb;font-weight:500;}
@@ -99,22 +99,22 @@ nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px s
 .compare-section{padding:100px 0;background:var(--cream);}
 .compare-table{width:100%;border-collapse:collapse;margin-top:48px;}
 .compare-table th{padding:16px 20px;text-align:left;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(13,31,60,0.9);border-bottom:1px solid rgba(13,31,60,0.1);}
-.compare-table th.hl{color:var(--navy);background:rgba(201,168,76,0.08);border-left:1px solid rgba(201,168,76,0.2);border-right:1px solid rgba(201,168,76,0.2);}
+.compare-table th.hl{color:var(--navy);background:rgba(37,99,235,0.08);border-left:1px solid rgba(37,99,235,0.2);border-right:1px solid rgba(37,99,235,0.2);}
 .compare-table td{padding:14px 20px;font-size:13px;color:var(--navy);border-bottom:1px solid rgba(13,31,60,0.07);}
-.compare-table td.hl{background:rgba(201,168,76,0.06);color:var(--navy);border-left:1px solid rgba(201,168,76,0.15);border-right:1px solid rgba(201,168,76,0.15);font-weight:500;}
-.compare-table tr:last-child td.hl{border-bottom:1px solid rgba(201,168,76,0.2);}
+.compare-table td.hl{background:rgba(37,99,235,0.06);color:var(--navy);border-left:1px solid rgba(37,99,235,0.15);border-right:1px solid rgba(37,99,235,0.15);font-weight:500;}
+.compare-table tr:last-child td.hl{border-bottom:1px solid rgba(37,99,235,0.2);}
 .check{color:#2e8b57;font-size:15px;font-weight:500;}
 .cross{color:rgba(13,31,60,0.45);font-size:15px;}
 .partial{color:#9a6e10;font-size:13px;font-weight:500;}
 
 .cta-section{padding:120px 48px;text-align:center;background:var(--navy);border-top:1px solid var(--border);position:relative;overflow:hidden;}
-.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 100%,rgba(201,168,76,0.08) 0%,transparent 65%);pointer-events:none;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 100%,rgba(37,99,235,0.08) 0%,transparent 65%);pointer-events:none;}
 .cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:1px;color:#f8f4eb;margin-bottom:20px;}
 .cta-section p{font-size:17px;color:rgba(248,244,235,0.85);margin-bottom:40px;font-weight:300;max-width:560px;margin-left:auto;margin-right:auto;}
 .cta-form{display:flex;gap:0;justify-content:center;max-width:480px;margin:0 auto;}
-.cta-input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);border-right:none;padding:16px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:#f8f4eb;outline:none;}
+.cta-input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(37,99,235,0.2);border-right:none;padding:16px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:#f8f4eb;outline:none;}
 .cta-input::placeholder{color:rgba(248,244,235,0.25);}
-.cta-input:focus{border-color:rgba(201,168,76,0.5);}
+.cta-input:focus{border-color:rgba(37,99,235,0.5);}
 
 footer{background:var(--navy);border-top:1px solid var(--border);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;}
 .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#f8f4eb;}
@@ -126,7 +126,7 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
   .nav-links{display:none;}
   .hero{padding:60px 24px;}
   .stats{padding:32px 20px;}
-  .stat{padding:16px 24px;border-right:none;border-bottom:1px solid rgba(201,168,76,0.1);}
+  .stat{padding:16px 24px;border-right:none;border-bottom:1px solid rgba(37,99,235,0.1);}
   .problem-grid{grid-template-columns:1fr;}
   .tab-content.active{grid-template-columns:1fr;}
   .problem-inner,.features-inner,.compare-inner{padding:0 24px;}
@@ -138,8 +138,8 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
 </head>
 <body>
 
-<div style="background:#1a1a1a;border-bottom:1px solid rgba(201,168,76,0.4);padding:10px 48px;text-align:center;">
-  <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(201,168,76,0.9);margin:0;letter-spacing:0.3px;">
+<div style="background:#1a1a1a;border-bottom:1px solid rgba(37,99,235,0.4);padding:10px 48px;text-align:center;">
+  <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(37,99,235,0.9);margin:0;letter-spacing:0.3px;">
     <strong style="font-weight:500;letter-spacing:1px;text-transform:uppercase;">Educational Purposes Only</strong>
     &nbsp;&mdash;&nbsp;
     Crisis IQ is a fictional company and concept created solely for an academic capstone project as part of the MMI Leadership Development Program facilitated by UVA Darden School of Business. This is not a real product or service. All features, statistics, and claims are illustrative only and do not represent any actual company, product, or service offering.
@@ -160,7 +160,7 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
 </nav>
 
 <section class="hero">
-  <img src="phoenix.png" alt="Crisis IQ" style="height:80px;width:auto;display:block;margin-bottom:16px;">
+  <img src="phoenix.png" alt="Crisis IQ" style="height:104px;width:auto;display:block;margin-bottom:16px;">
 <div class="hero-eyebrow">Crisis Communications Infrastructure</div>
   <h1>One Voice.<br>Every <span class="accent">Level.</span><br>Always.</h1>
   <p class="hero-sub">When a crisis breaks, the gap between what leadership knows and what your client-facing teams say can cost you everything. Crisis IQ closes that gap — in minutes, not hours.</p>
@@ -266,11 +266,11 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
         <div class="mock-row"><span class="mock-label">Reuters — Regulatory Filing</span><span class="status status-amber">Monitoring</span></div>
         <div class="mock-row"><span class="mock-label">Internal Compliance Flag</span><span class="status status-amber">Monitoring</span></div>
         <div class="mock-row"><span class="mock-label">WSJ Breaking News</span><span class="status status-green">Resolved</span></div>
-        <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(201,168,76,0.2);">
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(37,99,235,0.2);">
           <div style="font-size:11px;color:rgba(248,244,235,0.7);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Signal Cluster Analysis</div>
           <div class="mock-bar-row"><span class="mock-bar-label">Regulatory</span><div class="mock-bar"><div class="mock-bar-fill" style="width:78%;background:var(--gold);"></div></div><span class="mock-bar-pct">78%</span></div>
-          <div class="mock-bar-row"><span class="mock-bar-label">Reputational</span><div class="mock-bar"><div class="mock-bar-fill" style="width:54%;background:rgba(201,168,76,0.5);"></div></div><span class="mock-bar-pct">54%</span></div>
-          <div class="mock-bar-row"><span class="mock-bar-label">Operational</span><div class="mock-bar"><div class="mock-bar-fill" style="width:21%;background:rgba(201,168,76,0.25);"></div></div><span class="mock-bar-pct">21%</span></div>
+          <div class="mock-bar-row"><span class="mock-bar-label">Reputational</span><div class="mock-bar"><div class="mock-bar-fill" style="width:54%;background:rgba(37,99,235,0.5);"></div></div><span class="mock-bar-pct">54%</span></div>
+          <div class="mock-bar-row"><span class="mock-bar-label">Operational</span><div class="mock-bar"><div class="mock-bar-fill" style="width:21%;background:rgba(37,99,235,0.25);"></div></div><span class="mock-bar-pct">21%</span></div>
         </div>
       </div>
     </div>
@@ -294,7 +294,7 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
         <div class="mock-row"><span class="mock-label">Severity</span><span class="status status-red">High</span></div>
         <div class="mock-row"><span class="mock-label">Confirmed Facts</span><span class="mock-value">Inquiry received</span></div>
         <div class="mock-row"><span class="mock-label">Unconfirmed</span><span class="mock-value">Scope, timeline</span></div>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(37,99,235,0.2);">
           <div style="font-size:11px;color:rgba(248,244,235,0.7);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Role Messaging Status</div>
           <div class="mock-row"><span class="mock-label">Client-Facing Advisors</span><span class="status status-amber">Drafting</span></div>
           <div class="mock-row"><span class="mock-label">Portfolio / Product Teams</span><span class="status status-amber">Drafting</span></div>
@@ -321,7 +321,7 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
         <div class="mock-row"><span class="mock-label">General Counsel</span><span class="status status-green">Approved 09:14 AM</span></div>
         <div class="mock-row"><span class="mock-label">Chief Compliance Officer</span><span class="status status-amber">In Review</span></div>
         <div class="mock-row"><span class="mock-label">Chief Risk Officer</span><span class="status status-red">Pending</span></div>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(37,99,235,0.2);">
           <div class="mock-row"><span class="mock-label">Active Version</span><span class="mock-value">v3 — Current</span></div>
           <div class="mock-row"><span class="mock-label">Prior Versions</span><span class="mock-value">v1, v2 — Locked</span></div>
           <div class="mock-row"><span class="mock-label">Est. Completion</span><span class="mock-value">~12 minutes</span></div>
@@ -348,7 +348,7 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
         <div class="mock-row"><span class="mock-label">Email — All Advisors</span><span class="status status-green">Sent 09:31 AM</span></div>
         <div class="mock-row"><span class="mock-label">SMS — Priority Group</span><span class="status status-green">Sent 09:32 AM</span></div>
         <div class="mock-row"><span class="mock-label">CRM Banner (Salesforce)</span><span class="status status-green">Active</span></div>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(37,99,235,0.2);">
           <div style="font-size:11px;color:rgba(248,244,235,0.7);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Acknowledgment Rate</div>
           <div class="mock-bar-row"><span class="mock-bar-label">Acknowledged</span><div class="mock-bar"><div class="mock-bar-fill" style="width:73%;background:#5dbe80;"></div></div><span class="mock-bar-pct">73%</span></div>
           <div class="mock-bar-row"><span class="mock-bar-label">Pending</span><div class="mock-bar"><div class="mock-bar-fill" style="width:27%;background:#d4a833;"></div></div><span class="mock-bar-pct">27%</span></div>
@@ -375,7 +375,7 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
         <div class="mock-row"><span class="mock-label">"When will we have more info?"</span><span class="status status-green">Answered</span></div>
         <div class="mock-row"><span class="mock-label">"Should I expect any delays?"</span><span class="status status-amber">Escalated</span></div>
         <div class="mock-row"><span class="mock-label">"Is this investigation public?"</span><span class="status status-red">New — Urgent</span></div>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(37,99,235,0.2);">
           <div class="mock-row"><span class="mock-label">Avg. Response Time</span><span class="mock-value">4 min 12 sec</span></div>
           <div class="mock-row"><span class="mock-label">Knowledge Base Entries</span><span class="mock-value">+8 this event</span></div>
         </div>
@@ -395,7 +395,7 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
       <svg viewBox="0 0 780 680" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:780px;">
         <defs>
           <marker id="arrow-out" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L8,3 z" fill="#c9a84c" opacity="0.7"/>
+            <path d="M0,0 L0,6 L8,3 z" fill="#60a5fa" opacity="0.9"/>
           </marker>
           <marker id="arrow-in" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
             <path d="M8,0 L8,6 L0,3 z" fill="#6a8fb5" opacity="0.7"/>
@@ -407,9 +407,9 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
         </defs>
 
         <!-- Subtle grid rings -->
-        <circle cx="390" cy="340" r="120" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="1"/>
-        <circle cx="390" cy="340" r="210" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
-        <circle cx="390" cy="340" r="295" fill="none" stroke="rgba(201,168,76,0.03)" stroke-width="1"/>
+        <circle cx="390" cy="340" r="120" fill="none" stroke="rgba(37,99,235,0.07)" stroke-width="1"/>
+        <circle cx="390" cy="340" r="210" fill="none" stroke="rgba(37,99,235,0.05)" stroke-width="1"/>
+        <circle cx="390" cy="340" r="295" fill="none" stroke="rgba(37,99,235,0.03)" stroke-width="1"/>
 
         <!-- INBOUND spokes (blue) — left side signals coming IN -->
         <!-- SEC / FINRA — top left -->
@@ -421,23 +421,23 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
 
         <!-- OUTBOUND spokes (gold) — right side channels going OUT -->
         <!-- Email — top right -->
-        <line x1="390" y1="340" x2="600" y2="118" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <line x1="390" y1="340" x2="600" y2="118" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.9"/>
         <!-- Slack — right -->
-        <line x1="390" y1="340" x2="672" y2="240" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <line x1="390" y1="340" x2="672" y2="240" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.9"/>
         <!-- CRM Salesforce — far right -->
-        <line x1="390" y1="340" x2="692" y2="340" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <line x1="390" y1="340" x2="692" y2="340" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.9"/>
         <!-- SMS Mobile — right lower -->
-        <line x1="390" y1="340" x2="672" y2="440" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <line x1="390" y1="340" x2="672" y2="440" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.9"/>
         <!-- Client Portal — bottom right -->
-        <line x1="390" y1="340" x2="600" y2="542" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <line x1="390" y1="340" x2="600" y2="542" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.9"/>
         <!-- Board / C-Suite — top center -->
-        <line x1="390" y1="340" x2="390" y2="62" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.7"/>
+        <line x1="390" y1="340" x2="390" y2="62" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.9"/>
 
         <!-- HUB — Crisis IQ center -->
-        <circle cx="390" cy="340" r="72" fill="#0d1f3c" stroke="#c9a84c" stroke-width="2"/>
-        <circle cx="390" cy="340" r="66" fill="#162d52" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+        <circle cx="390" cy="340" r="72" fill="#84cc16" stroke="#a3e635" stroke-width="3"/>
+        <circle cx="390" cy="340" r="66" fill="#65a30d" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
         <text x="390" y="330" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#f8f4eb" letter-spacing="2">CRISIS</text>
-        <text x="390" y="354" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#c9a84c" letter-spacing="2">IQ</text>
+        <text x="390" y="354" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#fff" letter-spacing="2">IQ</text>
         <text x="390" y="372" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,244,235,0.5)" letter-spacing="1.5">PLATFORM</text>
 
         <!-- INBOUND NODES — left side -->
@@ -458,40 +458,40 @@ footer p{font-size:12px;color:rgba(248,244,235,0.65);}
 
         <!-- OUTBOUND NODES — right side -->
         <!-- Board / C-Suite — top center -->
-        <rect x="316" y="18" width="148" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
-        <text x="390" y="40" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">BOARD / C-SUITE</text>
+        <rect x="316" y="18" width="148" height="52" rx="3" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
+        <text x="390" y="40" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#fff" letter-spacing="0.3">BOARD / C-SUITE</text>
         <text x="390" y="57" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Executive Briefings</text>
 
         <!-- Email — top right -->
-        <rect x="584" y="82" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
-        <text x="644" y="104" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">EMAIL</text>
+        <rect x="584" y="82" width="120" height="52" rx="3" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
+        <text x="644" y="104" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#fff" letter-spacing="0.3">EMAIL</text>
         <text x="644" y="121" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">All Staff Broadcast</text>
 
         <!-- Slack -->
-        <rect x="638" y="214" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
-        <text x="698" y="236" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">SLACK</text>
+        <rect x="638" y="214" width="120" height="52" rx="3" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
+        <text x="698" y="236" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#fff" letter-spacing="0.3">SLACK</text>
         <text x="698" y="253" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Channel Alerts</text>
 
         <!-- CRM Salesforce -->
-        <rect x="648" y="314" width="124" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
-        <text x="710" y="336" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">CRM</text>
+        <rect x="648" y="314" width="124" height="52" rx="3" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
+        <text x="710" y="336" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#fff" letter-spacing="0.3">CRM</text>
         <text x="710" y="353" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Salesforce Banners</text>
 
         <!-- SMS Mobile -->
-        <rect x="638" y="414" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
-        <text x="698" y="436" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">SMS / MOBILE</text>
+        <rect x="638" y="414" width="120" height="52" rx="3" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
+        <text x="698" y="436" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#fff" letter-spacing="0.3">SMS / MOBILE</text>
         <text x="698" y="453" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Push Notifications</text>
 
         <!-- Client Portal -->
-        <rect x="584" y="516" width="120" height="52" rx="3" fill="#162d52" stroke="#c9a84c" stroke-width="1.5"/>
-        <text x="644" y="538" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#e2c278" letter-spacing="0.3">CLIENT PORTAL</text>
+        <rect x="584" y="516" width="120" height="52" rx="3" fill="#2563eb" stroke="#60a5fa" stroke-width="2"/>
+        <text x="644" y="538" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#fff" letter-spacing="0.3">CLIENT PORTAL</text>
         <text x="644" y="555" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,244,235,0.75)">Secure Updates</text>
 
         <!-- Legend -->
         <line x1="200" y1="625" x2="240" y2="625" stroke="#6a8fb5" stroke-width="1.5" stroke-dasharray="5,4"/>
         <text x="248" y="629" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(248,244,235,0.65)">Inbound Signals</text>
-        <line x1="360" y1="625" x2="400" y2="625" stroke="#c9a84c" stroke-width="1.5"/>
-        <circle cx="400" cy="625" r="3" fill="#c9a84c"/>
+        <line x1="360" y1="625" x2="400" y2="625" stroke="#60a5fa" stroke-width="1.5"/>
+        <circle cx="400" cy="625" r="3" fill="#60a5fa"/>
         <text x="410" y="629" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(248,244,235,0.65)">Outbound Communications</text>
       </svg>
     </div>
